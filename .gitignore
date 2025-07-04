@@ -1,0 +1,30 @@
+# Ignore backup files
+*.backup
+
+# Ignore OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Ignore temporary files
+*.tmp
+*.temp
+*~
+
+# Ignore logs
+*.log
+
+# Ignore nvim specific files that shouldn't be shared
+.config/nvim/lazy-lock.json
+
+# Ignore oh-my-zsh cache and logs
+.oh-my-zsh/cache/
+.oh-my-zsh/log/
+
+# Ignore tmux plugin state
+.tmux/plugins/*/
+!.tmux/plugins/tpm/
