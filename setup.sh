@@ -77,7 +77,6 @@ fi
 # Install Nerd Font
 if ! brew list --cask font-jetbrains-mono-nerd-font &>/dev/null; then
     print_status "Installing JetBrains Mono Nerd Font..."
-    brew tap homebrew/cask-fonts
     brew install --cask font-jetbrains-mono-nerd-font
 else
     print_success "JetBrains Mono Nerd Font is already installed"

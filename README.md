@@ -100,7 +100,6 @@ Edit `~/.config/ghostty/config` for terminal-specific settings.
 ### Fonts
 Install a Nerd Font for proper icon display:
 ```bash
-brew tap homebrew/cask-fonts
 brew install --cask font-jetbrains-mono-nerd-font
 ```
 
