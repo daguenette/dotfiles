@@ -116,13 +116,16 @@ done
 
 print_status "Creating symlinks..."
 
+# Get the absolute path to the dotfiles directory
+DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
 # Create symlinks for dotfiles
-ln -sf "$HOME/dotfiles/.zshrc" "$HOME/.zshrc"
-ln -sf "$HOME/dotfiles/.tmux.conf" "$HOME/.tmux.conf"
-ln -sf "$HOME/dotfiles/.p10k.zsh" "$HOME/.p10k.zsh"
-ln -sf "$HOME/dotfiles/.oh-my-zsh" "$HOME/.oh-my-zsh"
-ln -sf "$HOME/dotfiles/.tmux" "$HOME/.tmux"
-ln -sf "$HOME/dotfiles/.config" "$HOME/.config"
+ln -sf "$DOTFILES_DIR/.zshrc" "$HOME/.zshrc"
+ln -sf "$DOTFILES_DIR/.tmux.conf" "$HOME/.tmux.conf"
+ln -sf "$DOTFILES_DIR/.p10k.zsh" "$HOME/.p10k.zsh"
+ln -sf "$DOTFILES_DIR/.oh-my-zsh" "$HOME/.oh-my-zsh"
+ln -sf "$DOTFILES_DIR/.tmux" "$HOME/.tmux"
+ln -sf "$DOTFILES_DIR/.config" "$HOME/.config"
 
 print_success "Symlinks created successfully"
 
