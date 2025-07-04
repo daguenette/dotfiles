@@ -2,60 +2,64 @@
 # Based on opencode's main theme colors
 
 # Font configuration
-font-family = "JetBrains Mono"
-font-size = 14
+font-family = JetBrains Mono
+font-size = 18
 
 # Window configuration
 window-decoration = false
 window-padding-x = 8
 window-padding-y = 8
 
-# Theme: opencode-inspired
-# Background and foreground
-background = #0a0e1a
-foreground = #e1e8f0
+# Theme: opencode (exact colors from opencode theme specification)
+# Background and foreground - darkStep1 and darkStep12
+background = #0a0a0a
+foreground = #eeeeee
 
-# Cursor
-cursor-color = #4fc3f7
-cursor-text = #0a0e1a
+# Cursor - primary color (darkStep9)
+cursor-color = #fab283
+cursor-text = #0a0a0a
 
-# Selection
-selection-background = #1e3a5f
-selection-foreground = #e1e8f0
+# Selection - using darkStep3 for background
+selection-background = #1e1e1e
+selection-foreground = #eeeeee
 
-# ANSI Colors (0-7: normal, 8-15: bright)
-# Black
-palette = 0=#1a1f2e
-palette = 8=#2d3748
+# ANSI Colors (0-7: normal, 8-15: bright) - using opencode theme colors
+# Black - darkStep2 and darkStep3
+palette = 0=#141414
+palette = 8=#1e1e1e
 
-# Red
-palette = 1=#f56565
-palette = 9=#fc8181
+# Red - darkRed
+palette = 1=#e06c75
+palette = 9=#e06c75
 
-# Green
-palette = 2=#48bb78
-palette = 10=#68d391
+# Green - darkGreen  
+palette = 2=#7fd88f
+palette = 10=#7fd88f
 
-# Yellow
-palette = 3=#ed8936
-palette = 11=#f6ad55
+# Yellow/Orange - darkOrange and darkYellow
+palette = 3=#f5a742
+palette = 11=#e5c07b
 
-# Blue (opencode primary)
-palette = 4=#4fc3f7
-palette = 12=#63b3ed
+# Blue - darkSecondary
+palette = 4=#5c9cf5
+palette = 12=#5c9cf5
 
-# Magenta
-palette = 5=#9f7aea
-palette = 13=#b794f6
+# Magenta - darkAccent
+palette = 5=#9d7cd8
+palette = 13=#9d7cd8
 
-# Cyan (opencode accent)
-palette = 6=#38b2ac
-palette = 14=#4fd1c7
+# Cyan - darkCyan
+palette = 6=#56b6c2
+palette = 14=#56b6c2
 
-# White
-palette = 7=#e1e8f0
-palette = 15=#f7fafc
+# White - darkStep11 and darkStep12
+palette = 7=#808080
+palette = 15=#eeeeee
 
 # Additional terminal settings
 scrollback-limit = 10000
 confirm-close-surface = false
+
+# Ensure proper background color blending
+background-opacity = 1.0
+background-blur-radius = 0
