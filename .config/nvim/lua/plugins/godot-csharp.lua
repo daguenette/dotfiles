@@ -2,7 +2,7 @@
 -- GODOT C# DEVELOPMENT SETUP
 -- ====================================
 return {
-  -- C# development with automatic LSP handling
+  -- Streamlined C# development
   {
     "iabdelkareem/csharp.nvim",
     dependencies = {
@@ -11,26 +11,12 @@ return {
       "Tastyep/structlog.nvim",
     },
     ft = "cs",
-    init = function()
-      -- Set environment variables before plugin loads
-      vim.env.DOTNET_ROOT = "/usr/local/share/dotnet"
-      vim.env.DOTNET_HOST_PATH = "/usr/local/share/dotnet/dotnet"
-      vim.env.DOTNET_MSBUILD_SDK_RESOLVER_CLI_DIR = "/usr/local/share/dotnet"
-      vim.env.PATH = "/usr/local/share/dotnet:" .. (vim.env.PATH or "")
-    end,
     config = function()
       require("csharp").setup({
         lsp = {
-          enable_editor_config_support = true,
-          enable_ms_build_load_projects_on_demand = false,
           enable_roslyn_analyzers = true,
           organize_imports_on_format = true,
           enable_import_completion = true,
-          sdk_include_prereleases = true,
-          analyze_open_documents_only = false,
-        },
-        logging = {
-          level = "INFO",
         },
         dap = {
           adapter_name = "coreclr",
@@ -76,15 +62,13 @@ return {
     end,
   },
 
-  -- Mason configuration (remove OmniSharp)
+  -- Mason configuration
   {
     "williamboman/mason.nvim",
     opts = function(_, opts)
       opts.ensure_installed = opts.ensure_installed or {}
       vim.list_extend(opts.ensure_installed, {
-        "netcoredbg", -- .NET debugger
-        "json-lsp", -- JSON support
-        -- No OmniSharp here - csharp.nvim handles it
+        "netcoredbg",
       })
     end,
   },
