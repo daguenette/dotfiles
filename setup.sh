@@ -136,8 +136,20 @@ fi
 # Set zsh as default shell if not already
 if [ "$SHELL" != "$(which zsh)" ]; then
     print_status "Setting zsh as default shell..."
-    chsh -s "$(which zsh)"
-    print_success "Default shell changed to zsh"
+    
+    # Add zsh to allowed shells if not already there
+    ZSH_PATH="$(which zsh)"
+    if ! grep -q "$ZSH_PATH" /etc/shells; then
+        print_status "Adding $ZSH_PATH to /etc/shells..."
+        echo "$ZSH_PATH" | sudo tee -a /etc/shells > /dev/null
+    fi
+    
+    # Change default shell
+    if chsh -s "$ZSH_PATH"; then
+        print_success "Default shell changed to zsh"
+    else
+        print_warning "Failed to change default shell. You can do this manually later with: chsh -s $ZSH_PATH"
+    fi
 fi
 
 print_success "🎉 Dotfiles setup complete!"
