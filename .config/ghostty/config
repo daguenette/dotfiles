@@ -1,0 +1,61 @@
+# Ghostty Configuration - opencode theme
+# Based on opencode's main theme colors
+
+# Font configuration
+font-family = "JetBrains Mono"
+font-size = 14
+
+# Window configuration
+window-decoration = false
+window-padding-x = 8
+window-padding-y = 8
+
+# Theme: opencode-inspired
+# Background and foreground
+background = #0a0e1a
+foreground = #e1e8f0
+
+# Cursor
+cursor-color = #4fc3f7
+cursor-text = #0a0e1a
+
+# Selection
+selection-background = #1e3a5f
+selection-foreground = #e1e8f0
+
+# ANSI Colors (0-7: normal, 8-15: bright)
+# Black
+palette = 0=#1a1f2e
+palette = 8=#2d3748
+
+# Red
+palette = 1=#f56565
+palette = 9=#fc8181
+
+# Green
+palette = 2=#48bb78
+palette = 10=#68d391
+
+# Yellow
+palette = 3=#ed8936
+palette = 11=#f6ad55
+
+# Blue (opencode primary)
+palette = 4=#4fc3f7
+palette = 12=#63b3ed
+
+# Magenta
+palette = 5=#9f7aea
+palette = 13=#b794f6
+
+# Cyan (opencode accent)
+palette = 6=#38b2ac
+palette = 14=#4fd1c7
+
+# White
+palette = 7=#e1e8f0
+palette = 15=#f7fafc
+
+# Additional terminal settings
+scrollback-limit = 10000
+confirm-close-surface = false
