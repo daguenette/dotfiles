@@ -162,3 +162,44 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 # opencode
 export PATH=/Users/daguenette/.opencode/bin:$PATH
+
+# Git account switching functions with SSH key management
+git-work() {
+    git config --global user.name "daguenetecpo"
+    git config --global user.email "da.guenette@solutionscpo.co"
+    ssh-add -D 2>/dev/null  # Clear all keys (suppress errors)
+    ssh-add ~/.ssh/id_ed25519 2>/dev/null
+    echo "✅ Switched to work Git config + SSH key"
+}
+
+git-personal() {
+    git config --global user.name "daguenette"
+    git config --global user.email "daguenette.data@gmail.com"
+    ssh-add -D 2>/dev/null  # Clear all keys (suppress errors)
+    ssh-add ~/.ssh/id_ed25519_personal 2>/dev/null
+    echo "✅ Switched to personal Git config + SSH key"
+}
+
+# Show current git config and loaded SSH keys
+git-whoami() {
+    echo "Current Git config:"
+    echo "Name: $(git config --global user.name)"
+    echo "Email: $(git config --global user.email)"
+    echo "\nLoaded SSH keys:"
+    ssh-add -l 2>/dev/null || echo "No SSH keys loaded"
+}
+
+# Output SSH public keys for GitHub
+git-ssh-work() {
+    echo "Work SSH public key (copy this to GitHub):"
+    echo "----------------------------------------"
+    cat ~/.ssh/id_ed25519.pub
+    echo "----------------------------------------"
+}
+
+git-ssh-personal() {
+    echo "Personal SSH public key (copy this to GitHub):"
+    echo "----------------------------------------------"
+    cat ~/.ssh/id_ed25519_personal.pub
+    echo "----------------------------------------------"
+}
