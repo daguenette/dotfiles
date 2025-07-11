@@ -19,6 +19,8 @@ cd ~/dotfiles
 
 # Run the setup script
 ./setup.sh
+
+# Generate two ssh keys for work and personal.
 ```
 
 ## Manual Setup
